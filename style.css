@@ -1,0 +1,379 @@
+/* ===== BASE ===== */
+body{
+  margin:0;
+  background:#f7f1e8;
+  font-family:"Lobster", cursive;
+  display:flex;
+  justify-content:center;
+  padding:40px;
+  transition:.3s;
+}
+
+/* ===== MENU ===== */
+.menu{
+  position:relative;
+  width:800px;
+  background:#fffaf3;
+  border-radius:25px;
+  padding:40px;
+  box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+
+/* ===== HEADER ===== */
+.header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.header h1{
+  font-size:48px;
+  margin:0;
+  color:#3b2f2f;
+}
+
+.header p{
+  color:#8b5e3c;
+}
+
+/* ===== SEÇÕES ===== */
+.section{
+  margin-top:30px;
+}
+
+.section h2{
+  color:#5a3e2b;
+  border-bottom:1px solid #e8d9c3;
+  padding-bottom:5px;
+}
+
+/* ===== GRID ===== */
+.grid{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+/* ===== CARD ===== */
+.card{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:12px;
+  border-radius:12px;
+  transition:.2s;
+  border:1px solid transparent;
+}
+
+.card:hover{
+  background:#fff3e6;
+  border-color:#e8d9c3;
+  transform:translateY(-4px);
+}
+
+/* ===== IMAGEM ===== */
+.img-box{
+  width:70px;
+  height:70px;
+  position:relative;
+  border-radius:10px;
+  overflow:hidden;
+  flex-shrink:0;
+}
+
+.img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:all .8s ease;
+}
+
+.img1{ z-index:1; }
+.img2{
+  z-index:2;
+  opacity:0;
+  filter:blur(4px);
+}
+
+.card:hover .img2{
+  opacity:1;
+  filter:blur(0);
+}
+
+.card:hover .img1{
+  filter:blur(2px);
+  transform:scale(1.05);
+}
+
+/* ===== INFO ===== */
+.info{
+  flex:1;
+}
+
+.info h3{
+  margin:0;
+  font-size:18px;
+  color:#3b2f2f;
+}
+
+.info p{
+  margin:3px 0 0;
+  font-size:14px;
+  color:#8b8b8b;
+}
+
+/* ===== PRICE ===== */
+.price{
+  font-weight:bold;
+  color:#8b0000;
+}
+
+/* ===== BOTÃO ADD ===== */
+.add-btn{
+  border:none;
+  background:#8b5e3c;
+  color:white;
+  padding:6px 12px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:.3s;
+  position:relative;
+  overflow:hidden;
+}
+
+.add-btn:hover{
+  background:#6b4423;
+  transform:translateY(-2px);
+}
+
+/* ===== CART BUTTON ===== */
+.cart-button{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:#8b5e3c;
+  color:white;
+  padding:12px;
+  border-radius:50%;
+  font-size:20px;
+  text-decoration:none;
+}
+
+#cartCount{
+  position:absolute;
+  top:-5px;
+  right:-5px;
+  background:#8b0000;
+  color:white;
+  font-size:12px;
+  width:18px;
+  height:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+}
+
+.qty{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-right:10px;
+}
+
+.qty button{
+  width:25px;
+  height:25px;
+  border:none;
+  border-radius:6px;
+  background:#8b5e3c;
+  color:white;
+  cursor:pointer;
+}
+
+.qty-value{
+  min-width:20px;
+  text-align:center;
+}
+
+/* ===== THEME BUTTON ===== */
+.theme-btn{
+  margin-top:15px;
+  padding:8px 14px;
+  border:none;
+  border-radius:20px;
+  cursor:pointer;
+  background:#8b5e3c;
+  color:white;
+  transition:.3s;
+}
+
+/* ===== DARK MODE ===== */
+body.dark{
+  background:#1b1512;
+}
+
+body.dark .menu{
+  background:#2a211d;
+}
+
+body.dark .header h1,
+body.dark .header p,
+body.dark .info h3,
+body.dark .section h2,
+body.dark .price{
+  color:#f5e9dc;
+}
+
+body.dark .card:hover{
+  background:#3a2a22;
+}
+
+body.dark .add-btn{
+  background:#a07050;
+}
+
+body.dark .theme-btn{
+  background:#a07050;
+}
+
+/* ===== CARRINHO ===== */
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+  border-bottom:1px dashed #e8d9c3;
+  font-size:16px;
+  color:#3b2f2f;
+}
+
+.remove{
+  cursor:pointer;
+  color:#8b0000;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.remove:hover{
+  transform:scale(1.2);
+}
+
+.total{
+  margin-top:20px;
+  font-size:20px;
+  text-align:right;
+  color:#8b0000;
+}
+
+.empty{
+  text-align:center;
+  color:#8b5e3c;
+  padding:20px;
+}
+
+.btn{
+  margin-top:20px;
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:20px;
+  background:#8b5e3c;
+  color:white;
+  font-family:"Lobster", cursive;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#6b4423;
+  transform:translateY(-2px);
+}
+
+.menu{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+}
+
+/* garante alinhamento consistente */
+.section{
+  width:100%;
+}
+
+.header{
+  text-align:center;
+  width:100%;
+}
+
+.section h2{
+  text-align:left;
+}
+
+body.dark{
+  background:#1b1512;
+}
+
+/* fundo principal */
+body.dark .menu{
+  background:#2a211d;
+}
+
+/* textos gerais */
+body.dark p,
+body.dark span{
+  color:#d8c7b8;
+}
+
+/* títulos */
+body.dark h1,
+body.dark h2,
+body.dark h3{
+  color:#f5e9dc;
+}
+
+/* descrição */
+body.dark .info p{
+  color:#cbb8aa;
+}
+
+/* preço */
+body.dark .price{
+  color:#ffb089;
+}
+
+/* card hover */
+body.dark .card:hover{
+  background:#3a2a22;
+}
+
+/* botão adicionar */
+body.dark .add-btn{
+  background:#a07050;
+}
+
+body.dark .add-btn:hover{
+  background:#c08a60;
+}
+
+/* carrinho botão */
+body.dark .cart-button{
+  background:#a07050;
+}
+
+/* badge */
+body.dark #cartCount{
+  background:#c0392b;
+}
+
+/* botão tema */
+body.dark .theme-btn{
+  background:#a07050;
+}
+
+/* back button (se existir no cart) */
+body.dark .back-btn{
+  color:#f5e9dc;
+  border-color:#f5e9dc;
+}

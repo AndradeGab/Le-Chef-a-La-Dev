@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Panier - Le Chef à La Dev</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+
+    <div class="menu">
+        <a href="index.html" class="back-btn">← Retour au menu</a>
+        <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+        <h1>🛒 Votre Panier</h1>
+
+        <div id="cartList"></div>
+
+        <div class="total">
+            Total: R$ <span id="cartTotal">0,00</span>
+        </div>
+
+        <button class="btn" onclick="checkout()">
+            Commander 🍷
+        </button>
+
+    </div>
+
+    <div id="checkoutOverlay" class="overlay hidden">
+        <div class="box">
+            <div class="loader"></div>
+            <p>Traitement de la commande...</p>
+        </div>
+    </div>
+    <audio id="confirmSound" src="sounds/confirm.mp3" preload="auto"></audio>
+    <script src="cart.js"></script>
+
+</body>
+
+</html>
