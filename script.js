@@ -100,12 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
             addItem(name, price, qty);
 
+            // Atualiza o número do carrinho
+            updateCartCount();
+
             // reset
             qty = 1;
             qtyValue.innerText = qty;
 
             // feedback visual
             btn.innerText = "Ajouté ✔";
+
             setTimeout(() => {
                 btn.innerText = "Ajouter";
             }, 800);
